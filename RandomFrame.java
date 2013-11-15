@@ -37,7 +37,7 @@ public class RandomFrame extends JFrame{
 
         // create panel with buttons
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(getButton("Random Gray", false));
+        //buttonPanel.add(getButton("Random Gray", false));
         buttonPanel.add(getButton("Random Color", true));
         buttonPanel.add(getButton("Submit"));
         // add components to frame
@@ -52,8 +52,8 @@ public class RandomFrame extends JFrame{
             public void actionPerformed(ActionEvent e){
                 if(makeColor)
                     thePanel.setToColor();
-                else
-                    thePanel.setToGray();
+                //else
+                    //thePanel.setToGray();
                 thePanel.repaint();
             }
         });

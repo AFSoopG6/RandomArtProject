@@ -4,18 +4,18 @@ import java.awt.geom.*;
 import javax.swing.*;
 import java.util.Stack;
 
-public class A2MainSolution extends JFrame {
+public class RandomArt extends JFrame {
 
     public static void main(String[] args) {
          EventQueue.invokeLater(new Runnable() {
             public void run(){
-                A2MainSolution f = new A2MainSolution();
+                RandomArt f = new RandomArt();
                 f.setVisible(true);
             }
         });
     } 
     
-    public A2MainSolution() {
+    public RandomArt() {
             // Create Form Frame
             super("Random Art");
             setSize(450, 300);

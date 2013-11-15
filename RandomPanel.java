@@ -39,10 +39,10 @@ class RandomPanel extends JPanel{
         colorExp = new RandomExpression[3];
     }
 
-    public void setToGray(){
-        exp = new RandomExpression();
-        color = false;
-    }
+    //public void setToGray(){
+        //exp = new RandomExpression();
+        //color = false;
+    //}
 
     public void setToColor(){
         for(int i = 0; i < colorExp.length; i++)
@@ -62,11 +62,11 @@ class RandomPanel extends JPanel{
         for(int x = 0; x < MAX_X; x++){
             yVal = -1.0;
             for(int y = 0; y < MAX_Y; y++){
-                if(!color){
-                    int shade = getShade(xVal, yVal, exp);
-                    g2.setColor(grayscales[shade]);
-                }
-                else {
+                //if(!color){
+                    //int shade = getShade(xVal, yVal, exp);
+                    //g2.setColor(grayscales[shade]);
+                //}
+                //else {
                     
                     // the following block is an alternative way of 
                     // doing color. Use the same expression, but 
@@ -80,7 +80,7 @@ class RandomPanel extends JPanel{
                     int gr = getShade(xVal, yVal, colorExp[GREEN]);
                     int b = getShade(xVal, yVal, colorExp[BLUE]);
                     g2.setColor(new Color(r, gr, b));
-                }
+                //}
                 Rectangle2D pixel = new Rectangle2D.Double(x, y, 1, 1);
                 g2.fill(pixel);
                 yVal += yInc;
@@ -88,13 +88,13 @@ class RandomPanel extends JPanel{
             xVal += xInc;
         }
         // need to add this to the GUI!!!!
-        if(!color)
-            System.out.println(exp);
-        else{
+        //if(!color)
+            //System.out.println(exp);
+        //else{
             System.out.println("red: " + colorExp[RED]);
             System.out.println("green: " + colorExp[GREEN]);
             System.out.println("blue: " + colorExp[BLUE]);
-        }
+        //}
     }
 
     private int getShade(double x, double y, RandomExpression exp){

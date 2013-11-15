@@ -2,11 +2,9 @@
 comment0.params=
 comment0.target=RandomPanel()
 comment1.params=
-comment1.target=void\ setToGray()
-comment2.params=
-comment2.target=void\ setToColor()
-comment3.params=g
-comment3.target=void\ paintComponent(java.awt.Graphics)
-comment4.params=x\ y\ exp
-comment4.target=int\ getShade(double,\ double,\ RandomExpression)
-numComments=5
+comment1.target=void\ setToColor()
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=x\ y\ exp
+comment3.target=int\ getShade(double,\ double,\ RandomExpression)
+numComments=4
