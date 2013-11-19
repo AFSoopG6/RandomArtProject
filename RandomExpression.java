@@ -151,7 +151,6 @@ public class RandomExpression extends JFrame{
     // post: return a value between -1.0 and 1.0, inclusive
     public double getResult(double x, double y){
         Stack<Double> operands = new Stack<Double>();
-        //for(int i = 0; i < randExpression.length(); i++){
         int i = 0;
         while(i < randExpression.length()){
             char ch = randExpression.charAt(i);

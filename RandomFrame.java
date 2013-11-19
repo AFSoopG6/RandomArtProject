@@ -23,6 +23,8 @@ public class RandomFrame extends JFrame{
     public static void main(String[] args){
         EventQueue.invokeLater(new Runnable() {
             public void run(){                
+                RandomFrame rd = new RandomFrame();
+                rd.setVisible(true);
             }
         });
     }
@@ -40,9 +42,9 @@ public class RandomFrame extends JFrame{
         
         // create panel with buttons
         JPanel buttonPanel = new JPanel();
-        //buttonPanel.add(getButton("Random Gray", false));
         buttonPanel.add(getButton("Random Color", true));
         buttonPanel.add(getButton("Submit"));
+        buttonPanel.add(getButton1("Function"));
         
         // add components to frame
         theFrame.add(thePanel, BorderLayout.CENTER);
@@ -52,15 +54,26 @@ public class RandomFrame extends JFrame{
 
     public JButton getButton(String label, final boolean makeColor){
         ImageIcon random = new ImageIcon("randomcolor.png");
-        JButton result = new JButton(random);
-        result.addActionListener(new ActionListener(){
+        JButton color = new JButton(random);
+        color.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(makeColor)
-                    thePanel.setToColor();               
+                thePanel.setToColor();               
                 thePanel.repaint();
             }
         });
-        return result;
+        return color;
+    }
+    
+     public JButton getButton1(String label){
+        ImageIcon functpic = new ImageIcon("function.png");
+        JButton print = new JButton(functpic);
+        print.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){        
+                thePanel.toPrint();
+            }
+        });
+        return print;
     }
     
      public JButton getButton(String label){

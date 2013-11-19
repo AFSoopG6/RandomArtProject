@@ -86,16 +86,15 @@ class RandomPanel extends JPanel{
             }
             xVal += xInc;
         }
-        // need to add this to the GUI!!!!
-        //if(!color)
-            //System.out.println(exp);
-        //else{
-            System.out.println("red: " + colorExp[RED]);
-            System.out.println("green: " + colorExp[GREEN]);
-            System.out.println("blue: " + colorExp[BLUE]);
-        //}
+        
     }
 
+    public void toPrint(){
+        System.out.println("red: " + colorExp[RED]);
+        System.out.println("green: " + colorExp[GREEN]);
+        System.out.println("blue: " + colorExp[BLUE]);
+    }
+    
     private int getShade(double x, double y, RandomExpression exp){
         double val = exp.getResult(x, y);
         int result = (int)((val + 1.0) / 2.0 * NUM_SHADES);
