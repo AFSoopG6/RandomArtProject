@@ -11,6 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.EventQueue;
 import java.util.Stack;
+import javax.imageio.ImageIO;                    
+import java.awt.image.BufferedImage;     
+import java.io.IOException; 
 
 
 public class RandomFrame extends JFrame{
@@ -19,8 +22,7 @@ public class RandomFrame extends JFrame{
     
     public static void main(String[] args){
         EventQueue.invokeLater(new Runnable() {
-            public void run(){
-                
+            public void run(){                
             }
         });
     }
@@ -29,17 +31,19 @@ public class RandomFrame extends JFrame{
         theFrame = new JFrame();
         theFrame.setTitle("Random Art");
         theFrame.setLocation(100,100);
-        theFrame.setVisible(true);
+
+        //theFrame.setVisible(true);
         theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         thePanel = new RandomPanel();
-        theFrame.add(thePanel);
-
+        theFrame.add(thePanel);        
+        
         // create panel with buttons
         JPanel buttonPanel = new JPanel();
         //buttonPanel.add(getButton("Random Gray", false));
         buttonPanel.add(getButton("Random Color", true));
         buttonPanel.add(getButton("Submit"));
+        
         // add components to frame
         theFrame.add(thePanel, BorderLayout.CENTER);
         theFrame.add(buttonPanel, BorderLayout.SOUTH);
@@ -47,13 +51,12 @@ public class RandomFrame extends JFrame{
     }
 
     public JButton getButton(String label, final boolean makeColor){
-        JButton result = new JButton(label);
+        ImageIcon random = new ImageIcon("randomcolor.png");
+        JButton result = new JButton(random);
         result.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(makeColor)
-                    thePanel.setToColor();
-                //else
-                    //thePanel.setToGray();
+                    thePanel.setToColor();               
                 thePanel.repaint();
             }
         });
@@ -61,7 +64,8 @@ public class RandomFrame extends JFrame{
     }
     
      public JButton getButton(String label){
-        JButton btnsubmit = new JButton(label);
+        ImageIcon submit = new ImageIcon("submit.png");
+        JButton btnsubmit = new JButton(submit);
         btnsubmit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 JTextField name = new JTextField();

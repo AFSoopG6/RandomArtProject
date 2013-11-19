@@ -8,12 +8,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.EventQueue;
 import java.util.Stack;
-import java.util.Stack;
 
 class RandomPanel extends JPanel{
 
     private static final int NUM_SHADES = 256;
-    private Color[] grayscales;
+    //private Color[] grayscales;
     private boolean color;
     private RandomExpression exp;
     private RandomExpression[] colorExp;
@@ -26,10 +25,10 @@ class RandomPanel extends JPanel{
     // create 256 gray scale colors to avoid lots
     // of garbage color objects
     public RandomPanel(){
-        grayscales = new Color[NUM_SHADES];
-        for(int i = 0; i < NUM_SHADES; i++){
-            grayscales[i] = new Color(i,i,i);
-        }
+        //grayscales = new Color[NUM_SHADES];
+        //for(int i = 0; i < NUM_SHADES; i++){
+            //grayscales[i] = new Color(i,i,i);
+        //}
         color = false;   
         setPreferredSize(new Dimension(400,400));
         exp = new RandomExpression("xCySM");
@@ -76,10 +75,10 @@ class RandomPanel extends JPanel{
                     int gr = getShade(yVal, xVal, colorExp[RED]);
                     int b = getShade(-yVal, -xVal, colorExp[RED]);
                     */
-                    int r = getShade(xVal, yVal, colorExp[RED]);
-                    int gr = getShade(xVal, yVal, colorExp[GREEN]);
-                    int b = getShade(xVal, yVal, colorExp[BLUE]);
-                    g2.setColor(new Color(r, gr, b));
+                    int red = getShade(xVal, yVal, colorExp[RED]);
+                    int green = getShade(xVal, yVal, colorExp[GREEN]);
+                    int blue = getShade(xVal, yVal, colorExp[BLUE]);
+                    g2.setColor(new Color(red, green, blue));
                 //}
                 Rectangle2D pixel = new Rectangle2D.Double(x, y, 1, 1);
                 g2.fill(pixel);

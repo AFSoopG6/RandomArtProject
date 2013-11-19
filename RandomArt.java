@@ -3,9 +3,12 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import javax.swing.*;
 import java.util.Stack;
+import javax.imageio.ImageIO;                    
+import java.awt.image.BufferedImage;     
+import java.io.IOException; 
 
 public class RandomArt extends JFrame {
-
+    
     public static void main(String[] args) {
          EventQueue.invokeLater(new Runnable() {
             public void run(){
@@ -15,22 +18,28 @@ public class RandomArt extends JFrame {
         });
     } 
     
-    public RandomArt() {
+        public RandomArt() {
             // Create Form Frame
             super("Random Art");
-            setSize(450, 300);
+            setSize(925, 612);
             setLocation(250, 280);
+            setContentPane(new JLabel(new ImageIcon("Randomart.png")));
+            
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             getContentPane().setLayout(null);
 
             // Create Label Welcome
-            JLabel lbwelcome = new JLabel("Welcome To Random Art");
-            lbwelcome.setBounds(140, 20, 150, 100);
-            getContentPane().add(lbwelcome);
-
+            //JLabel lbwelcome = new JLabel("Welcome To Random Art");
+            //lbwelcome.setBounds(140, 20, 150, 100);
+            //getContentPane().add(lbwelcome);
+      
             // Create Button Start
-            JButton btnStart = new JButton("Start");
-            btnStart.setBounds(90, 90, 90, 30);
+            ImageIcon start = new ImageIcon("start.png");
+            //JButton button = new JButton(water);
+            //frame.add(button);            
+            JButton btnStart = new JButton(start);
+            btnStart.setBounds(370, 300, 200, 100);
+            
             btnStart.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     //Start random
@@ -42,17 +51,22 @@ public class RandomArt extends JFrame {
                     setVisible(false);
                 }
             });
-            getContentPane().add(btnStart);   
             
+            getContentPane().add(btnStart);                          
             // Create Button Exit
-            JButton btnExit = new JButton("Exit");
-            btnExit.setBounds(250, 90, 90, 30);
+            ImageIcon exit = new ImageIcon("exit.png");
+            JButton btnExit = new JButton(exit);
+            btnExit.setBounds(370, 400, 200, 100);
+            
             btnExit.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                    System.exit(0);
                 }
             });
-            getContentPane().add(btnExit);  
+            
+            getContentPane().add(btnExit);   
+            
         }
-}
+    }
+
 

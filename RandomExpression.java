@@ -46,12 +46,23 @@ public class RandomExpression extends JFrame{
     // C for cosine
     private static int countSingleOperandFunctions() {
         int total = 0;
-        for(int i = 0; i < OPERATORS.length(); i++){
-            char ch = OPERATORS.charAt(i);
-            if(SINGLE_OPERAND_OPERATORS.indexOf(ch) != -1)
+        
+        int i = 0;
+        while(i < OPERATORS.length()){
+        char ch = OPERATORS.charAt(i);
+            if(SINGLE_OPERAND_OPERATORS.indexOf(ch) != -1){
                 total++;
+            }
+                i++;
         }
         return total;
+        
+        //for(int i = 0; i < OPERATORS.length(); i++){
+            //char ch = OPERATORS.charAt(i);
+            //if(SINGLE_OPERAND_OPERATORS.indexOf(ch) != -1)
+                //total++;
+        //}
+        //return total;
     }
     
     // probability that operand will be another expression
@@ -140,7 +151,9 @@ public class RandomExpression extends JFrame{
     // post: return a value between -1.0 and 1.0, inclusive
     public double getResult(double x, double y){
         Stack<Double> operands = new Stack<Double>();
-        for(int i = 0; i < randExpression.length(); i++){
+        //for(int i = 0; i < randExpression.length(); i++){
+        int i = 0;
+        while(i < randExpression.length()){
             char ch = randExpression.charAt(i);
             if(ch == 'x')
                 operands.push(x);
@@ -169,7 +182,9 @@ public class RandomExpression extends JFrame{
                     operands.push(result);
                 }   
             }
+            i++;
         }
+        
         assert operands.size() == 1 : operands.size();
         double result = operands.pop();
         result = (result < -1.0) ? -1.0 : (result > 1.0) ? 1.0 : result;
